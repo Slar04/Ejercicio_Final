@@ -52,7 +52,7 @@ namespace Web_Api_Pedidos.Controllers
         {
             return CustomerData.GuardarCli(customer);
         }
-
+// Comentarios para saber si tengo los permisos necesarios
         /// <summary>
         /// elimina a un cliente por medio de un id
         /// </summary>
