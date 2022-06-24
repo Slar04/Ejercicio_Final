@@ -17,19 +17,28 @@ namespace Web_Api_Pedidos.Controllers
         /// </summary>
         /// <returns></returns>
         /// 
-        [Route("get", Name = "getProducto")]
-        [HttpGet]
-
-
-public ActionResult<List<Product>> GetResult()
-        {
+    [Route("get", Name = "getProducto")]
+    [HttpGet]
+    public ActionResult<ApiResult> GetResult()
+    {
             ApiResult ret = new ApiResult();
-            var rs = ProductsData.ListaProd();
-            ret = rs; // Que tipo de conversion se tiene que hacer?
+            try
+            {
+                var rs = ProductsData.ListaProd();
+                ret.data = rs; // Que tipo de conversion se tiene que hacer?
+                ret.ok = true;
+                ret.msg = "Consulta exitosa";
 
-            return (ret.ok) ? Ok(ret) : StatusCode(500, ret);
-            
-        }
+                return Ok(ret);
+            }
+            catch (Exception ex)
+            {
+                ret.msg = "Ocurrio un error al realizar la consulta : " + ex.Message;
+                ret.ok = false;
+                ret.data = null;
+                return StatusCode(500, ret);
+            }
+    }
 
 
 
