@@ -24,6 +24,8 @@ app.UseSwaggerUI();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
+    app.UseExceptionHandler("/Home/Error");
+    app.UseHsts();
     app.UseSwagger();
     app.UseSwaggerUI();
 }
