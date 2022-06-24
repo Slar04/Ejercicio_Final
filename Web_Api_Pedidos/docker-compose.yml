@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  web_api_pedidos:
+    image: ${DOCKER_REGISTRY-}webapipedidos
+    build:
+      context: .
+      dockerfile: Web_Api_Pedidos\Dockerfile
