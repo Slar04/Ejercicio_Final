@@ -25,19 +25,19 @@ public ActionResult<List<Product>> GetResult()
         {
             ApiResult ret = new ApiResult();
             var rs = ProductsData.ListaProd();
-            ret = rs;
+            ret = rs; // Que tipo de conversion se tiene que hacer?
 
-            return (bool)ret.data ? ret.ok ? Ok(ret);
+            return (ret.ok) ? Ok(ret) : StatusCode(500, ret);
             
         }
 
 
 
 
-        public List<Product> GetResult()
-        {
-            return ProductsData.ListaProd();
-        }
+     //   public List<Product> GetResult()
+       // {
+         //   return ProductsData.ListaProd();
+       // }
 
         
         /// <summary>
