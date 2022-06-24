@@ -20,6 +20,20 @@ namespace Web_Api_Pedidos.Controllers
         [Route("get", Name = "getProducto")]
         [HttpGet]
 
+
+public ActionResult<List<Product>> GetResult()
+        {
+            ApiResult ret = new ApiResult();
+            var rs = ProductsData.ListaProd();
+            ret = rs;
+
+            return (bool)ret.data ? ret.ok ? Ok(ret);
+            
+        }
+
+
+
+
         public List<Product> GetResult()
         {
             return ProductsData.ListaProd();
