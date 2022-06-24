@@ -18,7 +18,7 @@ namespace Web_Api_Pedidos.Controllers
         /// </summary>
         /// <returns></returns>
         /// 
-        [Route("Clientes/get", Name = "getClientes")]
+        [Route("get", Name = "getClientes")]
         [HttpGet]
 
         public List<Customer> GetResult()
@@ -32,8 +32,8 @@ namespace Web_Api_Pedidos.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         /// 
-        [Route("Clientes/get", Name = "getClientes")]
-        [HttpGet("{id}")]
+        [Route("get2", Name = "getClientes2")]
+        [HttpGet]
         public Customer Get(string id)
         {
             return CustomerData.ObtenerCli(id);
@@ -46,7 +46,7 @@ namespace Web_Api_Pedidos.Controllers
         /// <param name="customer"></param>
         /// <returns></returns>
         /// 
-        [Route("Clientes/post", Name = "postClientes")]
+        [Route("post", Name = "postClientes")]
         [HttpPost]
         public bool agregar(Customer customer)
         {
@@ -60,8 +60,8 @@ namespace Web_Api_Pedidos.Controllers
         /// <returns></returns>
         /// 
 
-        [Route("Clientes/del", Name = "delClientes")]
-        [HttpDelete("{id}")]
+        [Route("del", Name = "delClientes")]
+        [HttpDelete]
         public bool eliminar(string id)
         {
             return CustomerData.EliminarCli(id);
@@ -72,8 +72,8 @@ namespace Web_Api_Pedidos.Controllers
         /// <param name="customer"></param>
         /// <returns></returns>
         /// 
-        [Route("Clientes/put", Name = "putClientes")]
-        [HttpPut("{id}")]
+        [Route("put", Name = "putClientes")]
+        [HttpPut]
         public bool editar(Customer customer)
         {
             return CustomerData.EditarCli(customer);

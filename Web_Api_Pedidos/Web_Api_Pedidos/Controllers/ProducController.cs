@@ -17,7 +17,7 @@ namespace Web_Api_Pedidos.Controllers
         /// </summary>
         /// <returns></returns>
         /// 
-        [Route("Producto/get", Name = "getProducto")]
+        [Route("get", Name = "getProducto")]
         [HttpGet]
 
         public List<Product> GetResult()
@@ -33,8 +33,8 @@ namespace Web_Api_Pedidos.Controllers
         /// <returns></returns>
         /// 
 
-        [Route("Producto/get", Name = "getProducto")]
-        [HttpGet("{id}")]
+        [Route("get2", Name = "getProducto2")]
+        [HttpGet]
 
         public Product Get(int id)
         {
@@ -50,7 +50,7 @@ namespace Web_Api_Pedidos.Controllers
         /// <returns></returns>
         /// 
 
-        [Route("Producto/post", Name = "postProducto")]
+        [Route("post", Name = "postProducto")]
         [HttpPost]
 
         public bool agregar(Product oProduc)
@@ -65,8 +65,8 @@ namespace Web_Api_Pedidos.Controllers
         /// <param name="oProduc"></param>
         /// <returns></returns>
         /// 
-        [Route("Producto/put", Name = "putProducto")]
-        [HttpPut("{id}")]
+        [Route("put", Name = "putProducto")]
+        [HttpPut]
 
         public bool editar(Product oProduc)
         {
@@ -74,8 +74,8 @@ namespace Web_Api_Pedidos.Controllers
         }
 
 
-        [Route("Producto/del", Name = "delProducto")]
-        [HttpDelete("{id}")]
+        [Route("del", Name = "delProducto")]
+        [HttpDelete]
         /// <summary>
         /// 
         /// </summary>
