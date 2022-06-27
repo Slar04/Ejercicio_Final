@@ -177,7 +177,7 @@ namespace Web_Api_Pedidos.Datos
                     conexion.Open();
                     // SqlCommand cmd = new SqlCommand("sp_BusCus '"+name+"' ", conexion);
                     SqlCommand cmd = new SqlCommand("sp_EliminarCust  ", conexion);
-                    cmd.Parameters.AddWithValue("CustomerID", idCli);                    
+                    cmd.Parameters.AddWithValue("id", idCli);                    
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();
                 }

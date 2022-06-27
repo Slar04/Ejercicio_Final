@@ -33,8 +33,8 @@ namespace Web_Api_Pedidos.Datos
                             UnitsOnOrder = Convert.ToInt16(dr["UnitsOnOrder"]),
                             ReorderLevel = Convert.ToInt16( dr["ReorderLevel"]),
                             Discontinued = Convert.ToBoolean( dr["Discontinued"].ToString()),
-                             CategoryId= Convert.ToInt32( dr["idCategoria"]),
-                            SupplierId= Convert.ToInt32( dr["SuplierID"])
+                            CategoryId= Convert.ToInt32( dr["CategoryId"]),
+                           SupplierId= Convert.ToInt32( dr["SupplierID"])
                         });
                     }
                 }
@@ -113,7 +113,7 @@ namespace Web_Api_Pedidos.Datos
         }
 
 
-        public static bool editarCli(Product oProducto)
+        public static bool editarProd(Product oProducto)
         {
             bool rpta;
             try
