@@ -4,22 +4,18 @@ using System.Data;
 using System.Data.SqlClient;
 using Web_Api_Pedidos.Datos;
 using Web_Api_Pedidos.Models;
-
 namespace Web_Api_Pedidos.Controllers
 {
-    //[Route("api/v1/[controller]")]
-
-
-    [Route("api/Producto")]
+    [Route("api/[Suppliers]")]
     [ApiController]
-    public class ProducController : ControllerBase
+    public class SuppliersController : ControllerBase
     {
         /// <summary>
         /// Devuelve la lista completa de los clientes
         /// </summary>
         /// <returns></returns>
         /// 
-        [Route("get", Name = "getProducto")]
+        [Route("get", Name = "getSuppliers")]
         [HttpGet]
 
 
@@ -28,8 +24,8 @@ namespace Web_Api_Pedidos.Controllers
             ApiResult ret = new ApiResult();
             try
             {
-                var rs = ProductsData.ListaProd();
-                ret.data = rs; 
+                var rs = SuppliersData.Lista();
+                ret.data = rs;
                 ret.ok = true;
                 ret.msg = "Consulta exitosa";
 
@@ -45,7 +41,6 @@ namespace Web_Api_Pedidos.Controllers
         }
 
 
-
         /// <summary>
         ///  Busca un Producto por su ID
         /// </summary>
@@ -53,7 +48,7 @@ namespace Web_Api_Pedidos.Controllers
         /// <returns></returns>
         /// 
 
-        [Route("get2", Name = "getProducto2")]
+        [Route("get2", Name = "getSuppliers2")]
         [HttpGet]
 
         public ActionResult<ApiResult> Product(int id)
@@ -61,8 +56,7 @@ namespace Web_Api_Pedidos.Controllers
             ApiResult ret = new ApiResult();
             try
             {
-               
-                var rs = ProductsData.GetProd(id);
+                var rs = SuppliersData.Obtener(id);
                 ret.data = rs;
                 ret.ok = true;
                 ret.msg = "Consulta exitosa";
@@ -77,11 +71,7 @@ namespace Web_Api_Pedidos.Controllers
                 ret.data = null;
                 return StatusCode(500, ret);
             }
-
-           
-
         }
-
 
         /// <summary>
         /// 
@@ -90,16 +80,16 @@ namespace Web_Api_Pedidos.Controllers
         /// <returns></returns>
         /// 
 
-        [Route("post", Name = "postProducto")]
+        [Route("post", Name = "postSuppliers")]
         [HttpPost]
 
-        public  ActionResult<ApiResult> GuarProduct([FromBody]Product mod)
+        public ActionResult<ApiResult> GuardProd([FromBody] Supplier mod)
         {
             ApiResult ret = new ApiResult();
 
             try
             {
-                var rs = ProductsData.GuardaProducto(mod);
+                var rs = SuppliersData.Ingresar(mod);
                 ret.data = rs;
                 ret.ok = true;
                 ret.msg = "Se han guardados los cambios Correctamente";
@@ -113,25 +103,19 @@ namespace Web_Api_Pedidos.Controllers
                 ret.data = null;
                 return StatusCode(500, ret);
             }
-            
+
         }
 
-
-        /// <summary>
-        /// Actualiza los productos
-        /// </summary>
-        /// <param name="oProduc"></param>
-        /// <returns></returns>
-        /// 
-        [Route("put", Name = "putProducto")]
+        [Route("put", Name = "putSuppliers")]
         [HttpPut]
 
-        public ActionResult<ApiResult> editar([FromBody]Product oProduc)
+        public ActionResult<ApiResult> Actualizar([FromBody] Supplier mod)
         {
             ApiResult ret = new ApiResult();
+
             try
             {
-                var rs = ProductsData.editarProd(oProduc);
+               var rs= SuppliersData.Editar(mod);
                 ret.data = rs;
                 ret.ok = true;
                 ret.msg = "Se han actualizado los cambios Correctamente";
@@ -140,15 +124,15 @@ namespace Web_Api_Pedidos.Controllers
             catch (Exception ex)
             {
 
-                ret.msg = "Ocurrio un error al actualizar la consulta : " + ex.Message;
+                ret.msg = "Ocurrio un error al actualizar los datos : " + ex.Message;
                 ret.ok = false;
                 ret.data = null;
                 return StatusCode(500, ret);
             }
+
         }
 
-
-        [Route("del", Name = "delProducto")]
+        [Route("del", Name = "delSuppliers")]
         [HttpDelete]
         /// <summary>
         /// Emilina los prodcutos
@@ -161,7 +145,7 @@ namespace Web_Api_Pedidos.Controllers
             ApiResult ret = new ApiResult();
             try
             {
-                var rs = ProductsData.EliminarProd(oProduc);
+                var rs = SuppliersData.Eliminar(oProduc);
                 ret.data = rs;
                 ret.ok = true;
                 ret.msg = "Se ha borrado correctamente";
@@ -170,12 +154,11 @@ namespace Web_Api_Pedidos.Controllers
             catch (Exception ex)
             {
 
-                ret.msg = "Ocurrio un error al eliminar el producto : " + ex.Message;
+                ret.msg = "Ocurrio un error al eliminar  : " + ex.Message;
                 ret.ok = false;
                 ret.data = null;
                 return StatusCode(500, ret);
             }
         }
-
     }
 }

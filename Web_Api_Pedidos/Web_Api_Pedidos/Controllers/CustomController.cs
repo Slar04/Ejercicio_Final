@@ -21,9 +21,28 @@ namespace Web_Api_Pedidos.Controllers
         [Route("get", Name = "getClientes")]
         [HttpGet]
 
-        public List<Customer> GetResult()
+        public ActionResult<ApiResult> Lista()
         {
-            return CustomerData.ListaCli();
+            ApiResult ret = new ApiResult();
+            
+            try
+            {
+
+                var rs = CustomerData.ListaCli();
+                ret.data = rs;
+                ret.ok = true;
+                ret.msg = "Consulta exitosa";
+
+                return Ok(ret);
+            }
+            catch (Exception ex)
+            {
+
+                ret.msg = "Ocurrio un error al realizar la consulta : " + ex.Message;
+                ret.ok = false;
+                ret.data = null;
+                return StatusCode(500, ret);
+            }
         }
 
         /// <summary>
@@ -34,9 +53,28 @@ namespace Web_Api_Pedidos.Controllers
         /// 
         [Route("get2", Name = "getClientes2")]
         [HttpGet]
-        public Customer Get(string id)
+        public ActionResult<ApiResult> GetResult(string id)
         {
-            return CustomerData.ObtenerCli(id);
+            ApiResult ret = new ApiResult();
+
+            try
+            {
+
+                var rs = CustomerData.ObtenerCli(id);
+                ret.data = rs;
+                ret.ok = true;
+                ret.msg = "Consulta exitosa";
+
+                return Ok(ret);
+            }
+            catch (Exception ex)
+            {
+
+                ret.msg = "Ocurrio un error al realizar la consulta : " + ex.Message;
+                ret.ok = false;
+                ret.data = null;
+                return StatusCode(500, ret);
+            }
         }
 
 
@@ -48,11 +86,30 @@ namespace Web_Api_Pedidos.Controllers
         /// 
         [Route("post", Name = "postClientes")]
         [HttpPost]
-        public bool agregar(Customer customer)
+        public ActionResult<ApiResult> GuarProduct([FromBody] Customer mod)
         {
-            return CustomerData.GuardarCli(customer);
+            ApiResult ret = new ApiResult();
+
+            try
+            {
+
+                var rs = CustomerData.GuardarCli(mod);
+                ret.data = rs;
+                ret.ok = true;
+                ret.msg = "Se han guardado los datos correctamente";
+
+                return Ok(ret);
+            }
+            catch (Exception ex)
+            {
+
+                ret.msg = "Ocurrio un error al Guardar los Datos: " + ex.Message;
+                ret.ok = false;
+                ret.data = null;
+                return StatusCode(500, ret);
+            }
         }
-// Comentarios para saber si tengo los permisos necesarios
+
         /// <summary>
         /// elimina a un cliente por medio de un id
         /// </summary>
@@ -72,50 +129,33 @@ namespace Web_Api_Pedidos.Controllers
         /// <param name="customer"></param>
         /// <returns></returns>
         /// 
+
+
         [Route("put", Name = "putClientes")]
         [HttpPut]
-        public bool editar(Customer customer)
+        public ActionResult<ApiResult> Actualizar([FromBody]Customer oProduc)
         {
-            return CustomerData.EditarCli(customer);
+            ApiResult ret = new ApiResult();
+
+            try
+            {
+                var rs = CustomerData.EditarCli(oProduc);
+                ret.data = rs;
+                ret.ok = true;
+                ret.msg = "Se han actualizados los datos correctamente";
+
+                return Ok(ret);
+            }
+            catch (Exception ex)
+            {
+
+                ret.msg = "Ocurrio un error al actualizar los Datos: " + ex.Message;
+                ret.ok = false;
+                ret.data = null;
+                return StatusCode(500, ret);
+            }
         }
 
 
-        //CustomerData cdt = new CustomerData();
-
-
-        //public IActionResult Lista()
-        //{
-        //    //Muestra La lista 
-        //    var oLista = cdt.ListaCli();
-
-        //    return View(oLista);
-        //}
-        //public IActionResult Guardar()
-        //{
-        //    //Metodo  que solo devuelve la lista
-        //    var oLista = cdt.ListaCli();
-
-        //    return View(oLista);
-        //}
-
-        //[HttpPost]
-        //public IActionResult Guardar(Customer oCliente)
-        //{
-        //    //Metodo que recibe el objeto ´para guardarlo a la BD 
-        //    var respuesta = cdt.GuardarCli(oCliente);
-
-        //    if (respuesta)
-        //        return RedirectToAction("Lista");
-        //    else
-
-        //        return View();
-        //}
-        //public IActionResult Lista()
-        //{
-        //    //Muestra La lista 
-        //    var oLista = cdt.ListaCli();
-
-        //    return View(oLista);
-        //}
     }
 }
