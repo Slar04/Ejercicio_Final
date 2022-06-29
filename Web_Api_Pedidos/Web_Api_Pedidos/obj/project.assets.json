@@ -10006,23 +10006,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\rlozano\\.nuget\\packages\\": {},
+    "C:\\Users\\corsair gaming\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\rlozano\\Documents\\Repos\\SILT_FALSO_3\\Capacitacion\\Repos\\EJERCICIO_FINAL\\Web_Api_Pedidos\\Web_Api_Pedidos\\Web_Api_Pedidos.csproj",
+      "projectUniqueName": "C:\\Users\\corsair gaming\\Documents\\Ejercicio_Final\\Web_Api_Pedidos\\Web_Api_Pedidos\\Web_Api_Pedidos.csproj",
       "projectName": "Web_Api_Pedidos",
-      "projectPath": "C:\\Users\\rlozano\\Documents\\Repos\\SILT_FALSO_3\\Capacitacion\\Repos\\EJERCICIO_FINAL\\Web_Api_Pedidos\\Web_Api_Pedidos\\Web_Api_Pedidos.csproj",
-      "packagesPath": "C:\\Users\\rlozano\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rlozano\\Documents\\Repos\\SILT_FALSO_3\\Capacitacion\\Repos\\EJERCICIO_FINAL\\Web_Api_Pedidos\\Web_Api_Pedidos\\obj\\",
+      "projectPath": "C:\\Users\\corsair gaming\\Documents\\Ejercicio_Final\\Web_Api_Pedidos\\Web_Api_Pedidos\\Web_Api_Pedidos.csproj",
+      "packagesPath": "C:\\Users\\corsair gaming\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\corsair gaming\\Documents\\Ejercicio_Final\\Web_Api_Pedidos\\Web_Api_Pedidos\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\rlozano\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\corsair gaming\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -10031,7 +10031,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "http://192.168.0.8:4042/nuget": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -10115,7 +10114,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   }

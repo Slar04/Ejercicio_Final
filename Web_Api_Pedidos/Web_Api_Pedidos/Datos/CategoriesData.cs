@@ -7,7 +7,7 @@ namespace Web_Api_Pedidos.Datos
     public class CategoriesData
     {
         //Lista para visualizar las categorias
-        public static List<Category> ListaProd()
+        public static List<Category> Lista()
         {
             var oLista = new List<Category>();
             var cd = new Conexion11();
