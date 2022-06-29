@@ -7,7 +7,7 @@ using Web_Api_Pedidos.Models;
 
 namespace Web_Api_Pedidos.Controllers
 {
-    [Route("api/[Categories]")]
+    [Route("api/Categories")]
     [ApiController]
     public class CategoriesController : ControllerBase
     {
@@ -57,7 +57,7 @@ namespace Web_Api_Pedidos.Controllers
             ApiResult ret = new ApiResult();
             try
             {
-                var rs = CategoriesData.ObtenerCat(id);
+                var rs = CategoriesData.Obtener(id);
                 ret.data = rs;
                 ret.ok = true;
                 ret.msg = "Consulta exitosa";

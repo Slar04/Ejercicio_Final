@@ -49,7 +49,7 @@ using Web_Api_Pedidos.Models;
         /// <returns></returns>
         /// 
 
-        [Route("get2", Name = "getShipper")]
+        [Route("get2", Name = "getShipper2")]
         [HttpGet]
 
         public ActionResult<ApiResult> Product(int id)

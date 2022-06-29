@@ -6,7 +6,7 @@ using Web_Api_Pedidos.Datos;
 using Web_Api_Pedidos.Models;
 namespace Web_Api_Pedidos.Controllers
 {
-    [Route("api/[Order]")]
+    [Route("api/Order")]
     [ApiController]
     public class ordersController : ControllerBase
     {
@@ -48,7 +48,7 @@ namespace Web_Api_Pedidos.Controllers
         /// <returns></returns>
         /// 
 
-        [Route("get2", Name = "getOrder")]
+        [Route("get2", Name = "getOrder2")]
         [HttpGet]
 
         public ActionResult<ApiResult> Product(int id)

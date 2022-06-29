@@ -35,7 +35,7 @@ namespace Web_Api_Pedidos.Datos
             return oLista;
         }
         //Busca la categoria por ID
-        public static Category ObtenerCat(int id)
+        public static Category Obtener(int id)
         {
             var oCategory = new Category();
             var cd = new Conexion11();
