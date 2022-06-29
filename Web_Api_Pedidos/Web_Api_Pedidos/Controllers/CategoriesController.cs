@@ -25,7 +25,7 @@ namespace Web_Api_Pedidos.Controllers
             ApiResult ret = new ApiResult();
             try
             {
-                var rs = CategoriesData.ListaProd();
+                var rs = CategoriesData.Lista();
                 ret.data = rs;
                 ret.ok = true;
                 ret.msg = "Consulta exitosa";
