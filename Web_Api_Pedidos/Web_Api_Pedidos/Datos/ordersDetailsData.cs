@@ -4,44 +4,44 @@ using System.Data;
 
 namespace Web_Api_Pedidos.Datos
 {
-    public class ordersData
+    public class ordersDetailsData
     {
-    
-        public static List<Order> Lista()
+
+        public static List<OrderDetail> Lista()
         {
-            var oLista = new List<Order>();
+            var oLista = new List<OrderDetail>();
             var cd = new Conexion11();
 
             using (var conexion = new SqlConnection(cd.GetCadenaSQL()))
             {
                 conexion.Open();
-                SqlCommand cmd = new SqlCommand("sp_listaOrder", conexion);
+                SqlCommand cmd = new SqlCommand("sp_ListOrdDet", conexion);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 using (var dr = cmd.ExecuteReader())
                 {
                     while (dr.Read())
                     {
-                        oLista.Add(new Order()
+                        oLista.Add(new OrderDetail()
                         {
-                            OrderId = Convert.ToInt16(dr["OrderId"]),
-                            CustomerId = dr["CustomerId"].ToString(),
-                            EmployeeId = Convert.ToInt16(dr["EmployeeId"]),
-                            OrderDate = Convert.ToDateTime( dr["OrderDate"].ToString()),
-                            RequiredDate = Convert.ToDateTime(dr["TitleOfCourtesy"].ToString()),
-                            ShippedDate = Convert.ToDateTime(dr["TitleOfCourtesy"].ToString()),
-                            ShipVia = Convert.ToInt16(dr["TitleOfCourtesy"].ToString()),
-                            Freight = Convert.ToDecimal(dr["TitleOfCourtesy"].ToString()),
-                            ShipName= dr["ShipName"].ToString(),
-                            ShipAddress= dr["ShipAddress"].ToString(),
-                            ShipCity= dr["ShipAddress"].ToString(),
-                            ShipRegion=dr["ShipRegion"].ToString(),
-                            ShipPostalCode=dr["ShipPostalCode"].ToString(),
-                            ShipCountry=dr["ShipCountry"].ToString(),
+                            //OrderId = Convert.ToInt16(dr["OrderId"]),
+                            //CustomerId = dr["CustomerId"].ToString(),
+                            //EmployeeId = Convert.ToInt16(dr["EmployeeId"]),
+                            //OrderDate = Convert.ToDateTime(dr["OrderDate"].ToString()),
+                            //RequiredDate = Convert.ToDateTime(dr["TitleOfCourtesy"].ToString()),
+                            //ShippedDate = Convert.ToDateTime(dr["TitleOfCourtesy"].ToString()),
+                            //ShipVia = Convert.ToInt16(dr["TitleOfCourtesy"].ToString()),
+                            //Freight = Convert.ToDecimal(dr["TitleOfCourtesy"].ToString()),
+                            //ShipName = dr["ShipName"].ToString(),
+                            //ShipAddress = dr["ShipAddress"].ToString(),
+                            //ShipCity = dr["ShipAddress"].ToString(),
+                            //ShipRegion = dr["ShipRegion"].ToString(),
+                            //ShipPostalCode = dr["ShipPostalCode"].ToString(),
+                            //ShipCountry = dr["ShipCountry"].ToString(),
 
 
                         });
-                        
+
                     }
                 }
             }
@@ -78,7 +78,7 @@ namespace Web_Api_Pedidos.Datos
                         oCategory.ShipRegion = dr["ShipRegion"].ToString();
                         oCategory.ShipPostalCode = dr["ShipPostalCode"].ToString();
                         oCategory.ShipCountry = dr["ShipCountry"].ToString();
-                        
+
                     }
                 }
             }
@@ -108,7 +108,7 @@ namespace Web_Api_Pedidos.Datos
                     cmd.Parameters.AddWithValue("ShipCity", Categoria.ShipCity);
                     cmd.Parameters.AddWithValue("ShipRegion", Categoria.ShipRegion);
                     cmd.Parameters.AddWithValue("ShipPostalCode", Categoria.ShipPostalCode);
-                    cmd.Parameters.AddWithValue("ShipCountry", Categoria.ShipCountry);                   
+                    cmd.Parameters.AddWithValue("ShipCountry", Categoria.ShipCountry);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();
                 }

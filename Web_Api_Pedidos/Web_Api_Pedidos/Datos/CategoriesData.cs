@@ -24,9 +24,11 @@ namespace Web_Api_Pedidos.Datos
                     {
                         oLista.Add(new Category()
                         {
+                            CategoryId = Convert.ToInt16(dr["categoryId"]),
                             CategoryName = dr["CategoryName"].ToString(),
                             Description = dr["Description"].ToString(),
-                            Picture = Convert.ToByte( dr["Picture"].ToString()),
+                            //Que tipo de Concersion se hace para que no me genere algun tipo de error al hacer la consulta, el tipo byte que maneja el modelo es como si no fuera compatible
+                         //   Picture = Convert.ToByte( dr["Picture"].ToString()),
                       
                         });
                     }
@@ -51,9 +53,10 @@ namespace Web_Api_Pedidos.Datos
                 {
                     while (dr.Read())
                     {
+                        oCategory.CategoryId =Convert.ToInt16( dr["CategoryId"].ToString());
                         oCategory.CategoryName = dr["CategoryName"].ToString();
                         oCategory.Description = dr["Description"].ToString();
-                        oCategory.Picture = Convert.ToByte(dr["Picture"].ToString());
+                        //oCategory.Picture = Convert.ToByte(dr["Picture"].ToString());
                        
                     }
                 }

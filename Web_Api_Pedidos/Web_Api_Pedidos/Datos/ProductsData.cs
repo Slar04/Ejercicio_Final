@@ -25,8 +25,8 @@ namespace Web_Api_Pedidos.Datos
                         {
                             ProductId = Convert.ToInt32( dr["ProductId"]),
                             ProductName = dr["ProductName"].ToString(),
-                            CompanyName = dr["CompanyName"].ToString(),
-                            CategoryName = dr["CategoryName"].ToString(),
+                            //CompanyName = dr["CompanyName"].ToString(),
+                          //  CategoryName = dr["CategoryName"].ToString(),
                             QuantityPerUnit = dr["QuantityPerUnit"].ToString(),
                             UnitPrice = Convert.ToInt16(dr["UnitPrice"]),
                             UnitsInStock = Convert.ToInt16(dr["UnitsInStock"]),
@@ -61,16 +61,16 @@ namespace Web_Api_Pedidos.Datos
                     {
                         oLista.ProductId = Convert.ToInt32(dr["ProductId"]);
                         oLista.ProductName = dr["ProductName"].ToString();
-                        oLista.CompanyName = dr["CompanyName"].ToString();
-                        oLista.CategoryName = dr["CategoryName"].ToString();
+                      //  oLista.CompanyName = dr["CompanyName"].ToString();
+                        //oLista.CategoryName = dr["CategoryName"].ToString();
                         oLista.QuantityPerUnit = dr["QuantityPerUnit"].ToString();
                         oLista.UnitPrice = Convert.ToInt16(dr["UnitPrice"]);
                         oLista.UnitsInStock = Convert.ToInt16(dr["UnitsInStock"]);
                         oLista.UnitsOnOrder = Convert.ToInt16(dr["UnitsOnOrder"]);
                         oLista.ReorderLevel = Convert.ToInt16(dr["ReorderLevel"]);
                         oLista.Discontinued = Convert.ToBoolean(dr["Discontinued"].ToString());
-                        oLista.CategoryId = Convert.ToInt32(dr["idCategoria"]);
-                        oLista.SupplierId = Convert.ToInt32(dr["SuplierID"]);
+                        oLista.CategoryId = Convert.ToInt32(dr["CategoryID"]);
+                        oLista.SupplierId = Convert.ToInt32(dr["SupplierID"]);
                     }
                 }
             }

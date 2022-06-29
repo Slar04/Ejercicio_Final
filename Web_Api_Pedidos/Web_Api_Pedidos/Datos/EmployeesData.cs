@@ -22,7 +22,7 @@ namespace Web_Api_Pedidos.Datos
                     {
                         oLista.Add(new Employee()
                         {
-                            EmployeeId = Convert.ToInt16( dr["EmployeedID"]),
+                            EmployeeId = Convert.ToInt16( dr["EmployeeID"]),
                             LastName=dr["LastName"].ToString(),
                             FirstName = dr["FirstName"].ToString(),
                             Title = dr["Title"].ToString(),
@@ -99,7 +99,7 @@ namespace Web_Api_Pedidos.Datos
                 {
                     conexion.Open();
                     SqlCommand cmd = new SqlCommand("InsEmployes", conexion);
-                    //cmd.Parameters.AddWithValue("EmployeeId", Categoria.EmployeeId);
+                    cmd.Parameters.AddWithValue("EmployeeId", Categoria.EmployeeId);
                     cmd.Parameters.AddWithValue("LastName", Categoria.LastName);
                     cmd.Parameters.AddWithValue("FirstName", Categoria.FirstName);
                     cmd.Parameters.AddWithValue("Title", Categoria.Title);
