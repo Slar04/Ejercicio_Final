@@ -7,7 +7,7 @@ using Web_Api_Pedidos.Models;
 
 namespace Web_Api_Pedidos.Controllers
 {
-    [Route("api/[Categories]")]
+    [Route("api/Categories")]
     [ApiController]
     public class CategoriesController : ControllerBase
     {

@@ -6,7 +6,7 @@ using Web_Api_Pedidos.Datos;
 using Web_Api_Pedidos.Models;
 namespace Web_Api_Pedidos.Controllers
 {
-    [Route("api/[Suppliers]")]
+    [Route("api/Suppliers")]
     [ApiController]
     public class SuppliersController : ControllerBase
     {
