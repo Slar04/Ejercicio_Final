@@ -8,13 +8,13 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Web_Api_Pedidos
 build_property.RootNamespace = Web_Api_Pedidos
-build_property.ProjectDir = C:\Users\rlozano\Documents\Repos\SILT_FALSO_3\Capacitacion\Repos\EJERCICIO_FINAL\Web_Api_Pedidos\Web_Api_Pedidos\
+build_property.ProjectDir = C:\Users\corsair gaming\Documents\Ejercicio_Final\Web_Api_Pedidos\Web_Api_Pedidos\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\rlozano\Documents\Repos\SILT_FALSO_3\Capacitacion\Repos\EJERCICIO_FINAL\Web_Api_Pedidos\Web_Api_Pedidos
+build_property.MSBuildProjectDirectory = C:\Users\corsair gaming\Documents\Ejercicio_Final\Web_Api_Pedidos\Web_Api_Pedidos
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/rlozano/Documents/Repos/SILT_FALSO_3/Capacitacion/Repos/EJERCICIO_FINAL/Web_Api_Pedidos/Web_Api_Pedidos/Views/Clientes/Lista.cshtml]
+[C:/Users/corsair gaming/Documents/Ejercicio_Final/Web_Api_Pedidos/Web_Api_Pedidos/Views/Clientes/Lista.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZXNcTGlzdGEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
