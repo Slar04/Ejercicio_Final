@@ -98,16 +98,17 @@ namespace Web_Api_Pedidos.Datos
                     conexion.Open();
                     // SqlCommand cmd = new SqlCommand("sp_BusCus '"+name+"' ", conexion);
                     SqlCommand cmd = new SqlCommand("sp_custoners  ", conexion);
-                    cmd.Parameters.AddWithValue("CustomerID", oCliente.CustomerId);
-                    cmd.Parameters.AddWithValue("CompanyName", oCliente.CompanyName);
-                    cmd.Parameters.AddWithValue("ContactName", oCliente.ContactName);
-                    cmd.Parameters.AddWithValue("ContactTitle", oCliente.ContactTitle);
-                    cmd.Parameters.AddWithValue("City", oCliente.City);
-                    cmd.Parameters.AddWithValue("region", oCliente.Region);
-                    cmd.Parameters.AddWithValue("PostalCode", oCliente.PostalCode);
-                    cmd.Parameters.AddWithValue("Country", oCliente.Country);
-                    cmd.Parameters.AddWithValue("phone", oCliente.Phone);
-                    cmd.Parameters.AddWithValue("Fax", oCliente.Fax);
+                    cmd.Parameters.AddWithValue("@CustomerID", oCliente.CustomerId);
+                    cmd.Parameters.AddWithValue("@CompanyName", oCliente.CompanyName);
+                    cmd.Parameters.AddWithValue("@ContactName", oCliente.ContactName);
+                    cmd.Parameters.AddWithValue("@ContactTitle", oCliente.ContactTitle);
+                    cmd.Parameters.AddWithValue("@Address", oCliente.Address);
+                    cmd.Parameters.AddWithValue("@City", oCliente.City);
+                    cmd.Parameters.AddWithValue("@Region", oCliente.Region);
+                    cmd.Parameters.AddWithValue("@PostalCode", oCliente.PostalCode);
+                    cmd.Parameters.AddWithValue("@Country", oCliente.Country);
+                    cmd.Parameters.AddWithValue("@phone", oCliente.Phone);
+                    cmd.Parameters.AddWithValue("@Fax", oCliente.Fax);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();                     
                 }
@@ -137,16 +138,16 @@ namespace Web_Api_Pedidos.Datos
                     conexion.Open();
                     // SqlCommand cmd = new SqlCommand("sp_BusCus '"+name+"' ", conexion);
                     SqlCommand cmd = new SqlCommand("sp_ActualizaCusto  ", conexion);
-                    cmd.Parameters.AddWithValue("CustomerID", oCliente.CustomerId);
-                    cmd.Parameters.AddWithValue("CompanyName", oCliente.CompanyName);
-                    cmd.Parameters.AddWithValue("ContactName", oCliente.ContactName);
-                    cmd.Parameters.AddWithValue("ContactTitle", oCliente.ContactTitle);
-                    cmd.Parameters.AddWithValue("City", oCliente.City);
-                    cmd.Parameters.AddWithValue("region", oCliente.Region);
-                    cmd.Parameters.AddWithValue("PostalCode", oCliente.PostalCode);
-                    cmd.Parameters.AddWithValue("Country", oCliente.Country);
-                    cmd.Parameters.AddWithValue("phone", oCliente.Phone);
-                    cmd.Parameters.AddWithValue("Fax", oCliente.Fax);
+                    cmd.Parameters.AddWithValue("@CustomerID", oCliente.CustomerId);
+                    cmd.Parameters.AddWithValue("@CompanyName", oCliente.CompanyName);
+                    cmd.Parameters.AddWithValue("@ContactName", oCliente.ContactName);
+                    cmd.Parameters.AddWithValue("@ContactTitle", oCliente.ContactTitle);
+                    cmd.Parameters.AddWithValue("@City", oCliente.City);
+                    cmd.Parameters.AddWithValue("@Region", oCliente.Region);
+                    cmd.Parameters.AddWithValue("@PostalCode", oCliente.PostalCode);
+                    cmd.Parameters.AddWithValue("@Country", oCliente.Country);
+                    cmd.Parameters.AddWithValue("@phone", oCliente.Phone);
+                    cmd.Parameters.AddWithValue("@Fax", oCliente.Fax);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();
                 }
@@ -177,7 +178,7 @@ namespace Web_Api_Pedidos.Datos
                     conexion.Open();
                     // SqlCommand cmd = new SqlCommand("sp_BusCus '"+name+"' ", conexion);
                     SqlCommand cmd = new SqlCommand("sp_EliminarCust  ", conexion);
-                    cmd.Parameters.AddWithValue("id", idCli);                    
+                    cmd.Parameters.AddWithValue("@id", idCli);                    
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();
                 }

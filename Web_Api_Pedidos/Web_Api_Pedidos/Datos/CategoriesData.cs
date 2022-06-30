@@ -74,10 +74,10 @@ namespace Web_Api_Pedidos.Datos
                 using (var conexion = new SqlConnection(cd.GetCadenaSQL()))
                 {
                     conexion.Open();
-                    SqlCommand cmd = new SqlCommand("SP_cATEGORIES", conexion);
-                    cmd.Parameters.AddWithValue("CategoryName", Categoria.CategoryName);
-                    cmd.Parameters.AddWithValue("Description", Categoria.Description);
-                    cmd.Parameters.AddWithValue("Picture", Categoria.Picture);
+                    SqlCommand cmd = new SqlCommand("SP_cATEGORIES", conexion);                   
+                    cmd.Parameters.AddWithValue("@CategoryName", Categoria.CategoryName);
+                    cmd.Parameters.AddWithValue("@Description", Categoria.Description);
+                   // cmd.Parameters.AddWithValue("@Picture", Categoria.Picture);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();
                 }
@@ -101,9 +101,10 @@ namespace Web_Api_Pedidos.Datos
                 {
                     conexion.Open();
                     SqlCommand cmd = new SqlCommand("sp_ActCAt  ", conexion);
-                    cmd.Parameters.AddWithValue("CategoryName", Categoria.CategoryName);
-                    cmd.Parameters.AddWithValue("Description", Categoria.Description);
-                    cmd.Parameters.AddWithValue("Picture", Categoria.Picture);
+                    cmd.Parameters.AddWithValue("@id", Categoria.CategoryId);
+                    cmd.Parameters.AddWithValue("@CategoryName", Categoria.CategoryName);
+                    cmd.Parameters.AddWithValue("@Description", Categoria.Description);
+                   // cmd.Parameters.AddWithValue("@Picture", Categoria.Picture); // Como traer los datos para las imagenes
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();
                 }
@@ -129,7 +130,7 @@ namespace Web_Api_Pedidos.Datos
                     conexion.Open();
                     // SqlCommand cmd = new SqlCommand("sp_BusCus '"+name+"' ", conexion);
                     SqlCommand cmd = new SqlCommand("sp_DelCat  ", conexion);
-                    cmd.Parameters.AddWithValue("CustomerID", idCli);
+                    cmd.Parameters.AddWithValue("@id", idCli);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();
                 }
