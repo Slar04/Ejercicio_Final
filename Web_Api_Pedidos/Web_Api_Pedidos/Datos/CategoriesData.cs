@@ -24,9 +24,11 @@ namespace Web_Api_Pedidos.Datos
                     {
                         oLista.Add(new Category()
                         {
+                            CategoryId= Convert.ToInt16( dr["CategoryId"].ToString()),
                             CategoryName = dr["CategoryName"].ToString(),
                             Description = dr["Description"].ToString(),
-                            Picture = Convert.ToByte( dr["Picture"].ToString()),
+                            //Comentar picture por el tipo de formato, ya que no trae la consulta
+                            //Picture = Convert.ToByte( dr["Picture"].ToString()),
                       
                         });
                     }
@@ -51,9 +53,10 @@ namespace Web_Api_Pedidos.Datos
                 {
                     while (dr.Read())
                     {
+                        oCategory.CategoryId = Convert.ToInt16(dr["CategoryId"].ToString());
                         oCategory.CategoryName = dr["CategoryName"].ToString();
                         oCategory.Description = dr["Description"].ToString();
-                        oCategory.Picture = Convert.ToByte(dr["Picture"].ToString());
+                      //  oCategory.Picture = Convert.ToByte(dr["Picture"].ToString());
                        
                     }
                 }
@@ -71,7 +74,7 @@ namespace Web_Api_Pedidos.Datos
                 using (var conexion = new SqlConnection(cd.GetCadenaSQL()))
                 {
                     conexion.Open();
-                    SqlCommand cmd = new SqlCommand("SP_cATEGORIES  ", conexion);
+                    SqlCommand cmd = new SqlCommand("SP_cATEGORIES", conexion);
                     cmd.Parameters.AddWithValue("CategoryName", Categoria.CategoryName);
                     cmd.Parameters.AddWithValue("Description", Categoria.Description);
                     cmd.Parameters.AddWithValue("Picture", Categoria.Picture);

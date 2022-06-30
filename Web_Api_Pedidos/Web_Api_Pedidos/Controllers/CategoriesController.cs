@@ -36,7 +36,9 @@ namespace Web_Api_Pedidos.Controllers
             {
                 ret.msg = "Ocurrio un error al realizar la consulta : " + ex.Message;
                 ret.ok = false;
+#pragma warning disable CS8625 // No se puede convertir un literal NULL en un tipo de referencia que no acepta valores NULL.
                 ret.data = null;
+#pragma warning restore CS8625 // No se puede convertir un literal NULL en un tipo de referencia que no acepta valores NULL.
                 return StatusCode(500, ret);
             }
         }

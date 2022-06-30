@@ -7,7 +7,7 @@ using Web_Api_Pedidos.Models;
 
  namespace Web_Api_Pedidos.Controllers
 {
-    [Route("api/[Shipper]")]
+    [Route("api/Shipper")]
     [ApiController]
     public class ShipperController : ControllerBase
     {
