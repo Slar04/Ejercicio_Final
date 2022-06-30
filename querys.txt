@@ -1,0 +1,89 @@
+ALTER   PROCEDURE InsEmployes
+@LastName AS NVARCHAR(20),@FirstName AS NVARCHAR(10),@Title as NVARCHAR(30),@TitleOfCourtesy as NVARCHAR(25),@BirthDate AS DATETIME,@HireDate as DATETIME,
+@Address NVARCHAR(60),@City as NVARCHAR(15),@PostalCode as NVARCHAR(10),@Country AS NVARCHAR(15),@HomePhone as NVARCHAR(24),@Extension as NVARCHAR(4),@Notes AS NTEXT
+AS BEGIN
+   	INSERT INTO  Employees (LastName,FirstName,Title,TitleOfCourtesy,BirthDate,HireDate,
+Address,City,Region,PostalCode,Country,HomePhone,Extension,Photo,Notes,ReportsTo,PhotoPath) 
+VALUES(@LastName,@FirstName,@Title,@TitleOfCourtesy,@BirthDate,@HireDate,@Address,@City,
+'Norte',@PostalCode,@Country,@HomePhone,@Extension,NULL,@Notes,1,'//c://')
+   END
+
+
+create PROCEDURE sp_Products
+@ProductName AS NVARCHAR(40), @SupplierID as INT ,@CategoryID AS int,@QuantityPerUnit as int,@UnitPrice as money,
+@UnitsInStock as SMALLINT,@UnitsOnOrder as SMALLINT,@ReorderLevel as SMALLINT,@Discontinued as bit
+AS BEGIN
+   	insert INTO Products(ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,
+UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued)
+ values(@ProductName ,@SupplierID,@CategoryID,@QuantityPerUnit,@UnitPrice,@UnitsInStock,@UnitsOnOrder,@ReorderLevel,@Discontinued)
+
+ END
+
+
+CREATE PROCEDURE sp_Shipper
+@companyName AS NVARCHAR(40),@phone as NVARCHAR(24)
+AS BEGIN
+   	INSERT INTO Shippers VALUES(@companyName,@phone)
+   END
+
+CREATE PROCEDURE sp_Orders
+@CustomerID as nchar(5),@EmployeeID AS INT,@OrderDate as DATETIME,@RequiredDate AS DATETIME,@ShippedDate as DATETIME,
+@ShipVia as INT,@Freight as money,@ShipName as NVARCHAR(40),@ShipAddress NVARCHAR(60),@ShipCity as NVARCHAR(15),
+@ShipPostalCode as NVARCHAR(10),@ShipCountry as NVARCHAR(15)
+as BEGIN
+INSERT INTO Orders(CustomerID,EmployeeID,OrderDate,RequiredDate,ShippedDate,ShipVia,Freight,ShipName,
+ShipAddress,ShipCity,ShipRegion,ShipPostalCode,ShipCountry) 
+VALUES(@CustomerID,@EmployeeID,@OrderDate,@RequiredDate,@ShippedDate,@ShipVia,@Freight,@ShipName,@ShipAddress,
+@ShipCity,'NORTE',@ShipPostalCode,@ShipPostalCode)
+END
+
+
+CREATE PROCEDURE sp_ordersDetail
+@OrderID as int,@ProductID AS INT,@UnitPrice as money,@Quantity as int,@Discount as REAL
+AS BEGIN
+INSERT INTO [Order Details](OrderID,ProductID,UnitPrice,Quantity,Discount) 
+values( @OrderID,@ProductID,@UnitPrice,@Quantity,@Discount)
+END
+ 
+
+CREATE PROCEDURE sp_Supplier
+@CompanyName as NVARCHAR(40),@ContactName AS NVARCHAR(30),@ContactTitle as NVARCHAR(30),@Address as NVARCHAR(60),
+@City as NVARCHAR(15),@PostalCode as NVARCHAR(10),@Country AS NVARCHAR(15),@Phone as NVARCHAR(24),@Fax as NVARCHAR(24)
+AS BEGIN
+   	insert into Suppliers (CompanyName,ContactName,ContactTitle,Address,City,Region,PostalCode,Country,Phone,Fax,HomePage)
+    VALUES(@CompanyName,@ContactName,@ContactTitle,@Address,@City,'NORTE',@PostalCode,@Country,@Phone,@Fax,'#')
+   END
+
+
+
+CREATE PROCEDURE SP_cATEGORIES  
+@CategoryName AS NVARCHAR(15),@Description as NTEXT,@Picture AS IMAGE
+as BEGIN
+INSERT INTO Categories (CategoryName,Description,Picture)   
+values(@CategoryName,@Description,'###')	  
+   END
+
+
+CREATE PROCEDURE sp_custoners  
+@CustomerID as NCHAR(5),@CompanyName as NVARCHAR(40),@ContactName AS NVARCHAR(30),@ContactTitle AS NVARCHAR(30),@Address as NVARCHAR(60),
+@City as NVARCHAR(15),@PostalCode as NVARCHAR(10),@Country as NVARCHAR(15),@phone NVARCHAR(24),@Fax as nvaRCHAR(24)
+as BEGIN
+insert INTO Customers(CustomerID,CompanyName,ContactName,ContactTitle,Address,City,region,PostalCode,Country,phone,Fax)
+values(@CustomerID,@CompanyName,@ContactName,@ContactTitle,@Address,@City,'NORTE',@PostalCode,@Country,@phone,@Fax)
+   END
+
+
+
+alter PROCEDURE sp_BusCustomer  
+@CustomerID as Nvarchar(10) output
+as BEGIN
+select CustomerID as 'ID',CompanyName as 'Nombre Compañia',ContactName as'Nombre de Contacto',ContactTitle 'Titulo de Contacto' ,Address as 'Direccion',
+City as 'Ciudad',region as 'Region',PostalCode as 'Codigo Post.',Country as'Pais',phone as 'Teléfono',Fax from Customers where CustomerID like @CustomerID
+return;
+   END
+
+   exec sp_BusCustomer 'Alfy'
+
+   select CustomerID as 'ID',CompanyName as 'Nombre Compañia',ContactName as 'Nombre de Contacto',ContactTitle 'Titulo de Contacto' ,Address as 'Direccion',
+City as 'Ciudad',region as 'Region',PostalCode as 'Codigo Post.',Country 'Pais',phone 'Teléfono',Fax from Customers where CustomerID like '%al%' 
+   
