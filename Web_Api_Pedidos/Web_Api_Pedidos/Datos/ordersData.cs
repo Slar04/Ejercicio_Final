@@ -96,19 +96,19 @@ namespace Web_Api_Pedidos.Datos
                 {
                     conexion.Open();
                     SqlCommand cmd = new SqlCommand("sp_Orders", conexion);
-                    cmd.Parameters.AddWithValue("CustomerId", Categoria.CustomerId);
-                    cmd.Parameters.AddWithValue("EmployeeId", Categoria.EmployeeId);
-                    cmd.Parameters.AddWithValue("OrderDate", Categoria.OrderDate);
-                    cmd.Parameters.AddWithValue("RequiredDate", Categoria.RequiredDate);
-                    cmd.Parameters.AddWithValue("ShippedDate", Categoria.ShippedDate);
-                    cmd.Parameters.AddWithValue("ShipVia", Categoria.ShipVia);
-                    cmd.Parameters.AddWithValue("Freight", Categoria.Freight);
-                    cmd.Parameters.AddWithValue("ShipName", Categoria.ShipName);
-                    cmd.Parameters.AddWithValue("ShipAddress", Categoria.ShipAddress);
-                    cmd.Parameters.AddWithValue("ShipCity", Categoria.ShipCity);
-                    cmd.Parameters.AddWithValue("ShipRegion", Categoria.ShipRegion);
-                    cmd.Parameters.AddWithValue("ShipPostalCode", Categoria.ShipPostalCode);
-                    cmd.Parameters.AddWithValue("ShipCountry", Categoria.ShipCountry);                   
+                    cmd.Parameters.AddWithValue("@CustomerId", Categoria.CustomerId);
+                    cmd.Parameters.AddWithValue("@EmployeeId", Categoria.EmployeeId);
+                    cmd.Parameters.AddWithValue("@OrderDate", Categoria.OrderDate);
+                    cmd.Parameters.AddWithValue("@RequiredDate", Categoria.RequiredDate);
+                    cmd.Parameters.AddWithValue("@ShippedDate", Categoria.ShippedDate);
+                    cmd.Parameters.AddWithValue("@ShipVia", Categoria.ShipVia);
+                    cmd.Parameters.AddWithValue("@Freight", Categoria.Freight);
+                    cmd.Parameters.AddWithValue("@ShipName", Categoria.ShipName);
+                    cmd.Parameters.AddWithValue("@ShipAddress", Categoria.ShipAddress);
+                    cmd.Parameters.AddWithValue("@ShipCity", Categoria.ShipCity); 
+                    //REGION se llena automaticamente
+                    cmd.Parameters.AddWithValue("@ShipPostalCode", Categoria.ShipPostalCode);
+                    cmd.Parameters.AddWithValue("@ShipCountry", Categoria.ShipCountry);                   
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();
                 }
@@ -133,20 +133,20 @@ namespace Web_Api_Pedidos.Datos
                     conexion.Open();
                     SqlCommand cmd = new SqlCommand("sp_InsertOrders", conexion);
 
-                    cmd.Parameters.AddWithValue("OrderId", Categoria.OrderId);
-                    cmd.Parameters.AddWithValue("CustomerId", Categoria.CustomerId);
-                    cmd.Parameters.AddWithValue("EmployeeId", Categoria.EmployeeId);
-                    cmd.Parameters.AddWithValue("OrderDate", Categoria.OrderDate);
-                    cmd.Parameters.AddWithValue("RequiredDate", Categoria.RequiredDate);
-                    cmd.Parameters.AddWithValue("ShippedDate", Categoria.ShippedDate);
-                    cmd.Parameters.AddWithValue("ShipVia", Categoria.ShipVia);
-                    cmd.Parameters.AddWithValue("Freight", Categoria.Freight);
-                    cmd.Parameters.AddWithValue("ShipName", Categoria.ShipName);
-                    cmd.Parameters.AddWithValue("ShipAddress", Categoria.ShipAddress);
-                    cmd.Parameters.AddWithValue("ShipCity", Categoria.ShipCity);
-                    cmd.Parameters.AddWithValue("ShipRegion", Categoria.ShipRegion);
-                    cmd.Parameters.AddWithValue("ShipPostalCode", Categoria.ShipPostalCode);
-                    cmd.Parameters.AddWithValue("ShipCountry", Categoria.ShipCountry);
+                    cmd.Parameters.AddWithValue("@OrderId", Categoria.OrderId);
+                    cmd.Parameters.AddWithValue("@CustomerId", Categoria.CustomerId);
+                    cmd.Parameters.AddWithValue("@EmployeeId", Categoria.EmployeeId);
+                    cmd.Parameters.AddWithValue("@OrderDate", Categoria.OrderDate);
+                    cmd.Parameters.AddWithValue("@RequiredDate", Categoria.RequiredDate);
+                    cmd.Parameters.AddWithValue("@ShippedDate", Categoria.ShippedDate);
+                    cmd.Parameters.AddWithValue("@ShipVia", Categoria.ShipVia);
+                    cmd.Parameters.AddWithValue("@Freight", Categoria.Freight);
+                    cmd.Parameters.AddWithValue("@ShipName", Categoria.ShipName);
+                    cmd.Parameters.AddWithValue("@ShipAddress", Categoria.ShipAddress);
+                    cmd.Parameters.AddWithValue("@ShipCity", Categoria.ShipCity);
+                    cmd.Parameters.AddWithValue("@ShipRegion", Categoria.ShipRegion);
+                    cmd.Parameters.AddWithValue("@ShipPostalCode", Categoria.ShipPostalCode);
+                    cmd.Parameters.AddWithValue("@ShipCountry", Categoria.ShipCountry);
 
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();

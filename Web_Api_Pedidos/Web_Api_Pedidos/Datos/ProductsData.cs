@@ -89,15 +89,15 @@ namespace Web_Api_Pedidos.Datos
                     conexion.Open();
                     SqlCommand cmd = new SqlCommand("sp_Products", conexion);
                     //cmd.Parameters.AddWithValue("ProductId", oProduct.ProductId);
-                    cmd.Parameters.AddWithValue("ProductName", oProduct.ProductName);
-                    cmd.Parameters.AddWithValue("SupplierID", oProduct.SupplierId);
-                    cmd.Parameters.AddWithValue("CategoryId", oProduct.CategoryId);
-                    cmd.Parameters.AddWithValue("QuantityPerUnit", oProduct.QuantityPerUnit);
-                    cmd.Parameters.AddWithValue("UnitPrice", oProduct.UnitPrice);
-                    cmd.Parameters.AddWithValue("UnitsInStock", oProduct.UnitsInStock);
-                    cmd.Parameters.AddWithValue("UnitsOnOrder", oProduct.UnitsOnOrder);
-                    cmd.Parameters.AddWithValue("ReorderLevel", oProduct.ReorderLevel);
-                    cmd.Parameters.AddWithValue("Discontinued", oProduct.Discontinued);
+                    cmd.Parameters.AddWithValue("@ProductName", oProduct.ProductName);
+                    cmd.Parameters.AddWithValue("@SupplierID", oProduct.SupplierId);
+                    cmd.Parameters.AddWithValue("@CategoryId", oProduct.CategoryId);
+                    cmd.Parameters.AddWithValue("@QuantityPerUnit", oProduct.QuantityPerUnit);
+                    cmd.Parameters.AddWithValue("@UnitPrice", oProduct.UnitPrice);
+                    cmd.Parameters.AddWithValue("@UnitsInStock", oProduct.UnitsInStock);
+                    cmd.Parameters.AddWithValue("@UnitsOnOrder", oProduct.UnitsOnOrder);
+                    cmd.Parameters.AddWithValue("@ReorderLevel", oProduct.ReorderLevel);
+                    cmd.Parameters.AddWithValue("@Discontinued", oProduct.Discontinued);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();
                 }
@@ -123,16 +123,16 @@ namespace Web_Api_Pedidos.Datos
                 {
                     conexion.Open();
                     SqlCommand cmd = new SqlCommand("sp_ProdUpDate", conexion);
-                    cmd.Parameters.AddWithValue("ProductID", oProducto.ProductId);
-                    cmd.Parameters.AddWithValue("ProductName", oProducto.ProductName);
-                    cmd.Parameters.AddWithValue("SupplierID", oProducto.SupplierId);
-                    cmd.Parameters.AddWithValue("CategoryId", oProducto.CategoryId);
-                    cmd.Parameters.AddWithValue("QuantityPerUnit", oProducto.QuantityPerUnit);
-                    cmd.Parameters.AddWithValue("UnitPrice", oProducto.UnitPrice);
-                    cmd.Parameters.AddWithValue("UnitsInStock", oProducto.UnitsInStock);
-                    cmd.Parameters.AddWithValue("UnitsOnOrder", oProducto.UnitsOnOrder);
-                    cmd.Parameters.AddWithValue("ReorderLevel", oProducto.ReorderLevel);
-                    cmd.Parameters.AddWithValue("Discontinued", oProducto.Discontinued);
+                    cmd.Parameters.AddWithValue("@id", oProducto.ProductId);
+                    cmd.Parameters.AddWithValue("@ProductName", oProducto.ProductName);
+                    cmd.Parameters.AddWithValue("@SupplierID", oProducto.SupplierId);
+                    cmd.Parameters.AddWithValue("@CategoryId", oProducto.CategoryId);
+                    cmd.Parameters.AddWithValue("@QuantityPerUnit", oProducto.QuantityPerUnit);
+                    cmd.Parameters.AddWithValue("@UnitPrice", oProducto.UnitPrice);
+                    cmd.Parameters.AddWithValue("@UnitsInStock", oProducto.UnitsInStock);
+                    cmd.Parameters.AddWithValue("@UnitsOnOrder", oProducto.UnitsOnOrder);
+                    cmd.Parameters.AddWithValue("@ReorderLevel", oProducto.ReorderLevel);
+                    cmd.Parameters.AddWithValue("@Discontinued", oProducto.Discontinued);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();
                 }
@@ -161,7 +161,7 @@ namespace Web_Api_Pedidos.Datos
                     conexion.Open();
                     // SqlCommand cmd = new SqlCommand("sp_BusCus '"+name+"' ", conexion);
                     SqlCommand cmd = new SqlCommand("sp_ProdDelet  ", conexion);
-                    cmd.Parameters.AddWithValue("id", idCli);
+                    cmd.Parameters.AddWithValue("@id", idCli);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();
                 }

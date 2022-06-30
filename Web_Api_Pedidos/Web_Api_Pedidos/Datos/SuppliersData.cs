@@ -89,16 +89,17 @@ namespace Web_Api_Pedidos.Datos
                 {
                     conexion.Open();
                     SqlCommand cmd = new SqlCommand("sp_Supplier", conexion);
-                    cmd.Parameters.AddWithValue("CompanyName", Categoria.CompanyName);
-                    cmd.Parameters.AddWithValue("ContactName", Categoria.ContactName);
-                    cmd.Parameters.AddWithValue("Address", Categoria.Address);
-                    cmd.Parameters.AddWithValue("City", Categoria.City);
-                    cmd.Parameters.AddWithValue("region", Categoria.Region);
-                    cmd.Parameters.AddWithValue("PostalCode", Categoria.PostalCode);
-                    cmd.Parameters.AddWithValue("Country", Categoria.Country);
-                    cmd.Parameters.AddWithValue("Phone", Categoria.Phone);
-                    cmd.Parameters.AddWithValue("Fax", Categoria.Phone);
-                    cmd.Parameters.AddWithValue("HomePage", Categoria.Phone);
+                    cmd.Parameters.AddWithValue("@CompanyName", Categoria.CompanyName);
+                    cmd.Parameters.AddWithValue("@ContactName", Categoria.ContactName);
+                    cmd.Parameters.AddWithValue("@@ContactTitle", Categoria.ContactTitle);
+                    cmd.Parameters.AddWithValue("@Address", Categoria.Address);
+                    cmd.Parameters.AddWithValue("@City", Categoria.City);
+                    cmd.Parameters.AddWithValue("@region", Categoria.Region);
+                    cmd.Parameters.AddWithValue("@PostalCode", Categoria.PostalCode);
+                    cmd.Parameters.AddWithValue("@Country", Categoria.Country);
+                    cmd.Parameters.AddWithValue("@Phone", Categoria.Phone);
+                    cmd.Parameters.AddWithValue("@Fax", Categoria.Fax);
+                    
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();
                 }
@@ -122,18 +123,17 @@ namespace Web_Api_Pedidos.Datos
                 {
                     conexion.Open();
                     SqlCommand cmd = new SqlCommand("sp_ActualizaSpp", conexion);
-                    cmd.Parameters.AddWithValue("SupplierID", Categoria.SupplierId);
-                    cmd.Parameters.AddWithValue("CompanyName", Categoria.CompanyName);
-                    cmd.Parameters.AddWithValue("CompanyName", Categoria.CompanyName);
-                    cmd.Parameters.AddWithValue("ContactName", Categoria.ContactName);
-                    cmd.Parameters.AddWithValue("Address", Categoria.Address);
-                    cmd.Parameters.AddWithValue("City", Categoria.City);
-                    cmd.Parameters.AddWithValue("region", Categoria.Region);
-                    cmd.Parameters.AddWithValue("PostalCode", Categoria.PostalCode);
-                    cmd.Parameters.AddWithValue("Country", Categoria.Country);
-                    cmd.Parameters.AddWithValue("Phone", Categoria.Phone);
-                    cmd.Parameters.AddWithValue("Fax", Categoria.Phone);
-                    cmd.Parameters.AddWithValue("HomePage", Categoria.Phone);
+                    cmd.Parameters.AddWithValue("@id", Categoria.SupplierId);
+                    cmd.Parameters.AddWithValue("@CompanyName", Categoria.CompanyName);
+                    cmd.Parameters.AddWithValue("@ContactName", Categoria.ContactName);
+                    cmd.Parameters.AddWithValue("@@ContactTitle", Categoria.ContactTitle);
+                    cmd.Parameters.AddWithValue("@Address", Categoria.Address);
+                    cmd.Parameters.AddWithValue("@City", Categoria.City);
+                    cmd.Parameters.AddWithValue("@region", Categoria.Region);
+                    cmd.Parameters.AddWithValue("@PostalCode", Categoria.PostalCode);
+                    cmd.Parameters.AddWithValue("@Country", Categoria.Country);
+                    cmd.Parameters.AddWithValue("@Phone", Categoria.Phone);
+                    cmd.Parameters.AddWithValue("@Fax", Categoria.Fax);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();
                 }

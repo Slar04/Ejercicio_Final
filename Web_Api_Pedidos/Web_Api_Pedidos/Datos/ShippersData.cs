@@ -71,8 +71,8 @@ namespace Web_Api_Pedidos.Datos
                 {
                     conexion.Open();
                     SqlCommand cmd = new SqlCommand("sp_Shipper", conexion);
-                    cmd.Parameters.AddWithValue("CompanyName", Categoria.CompanyName);
-                    cmd.Parameters.AddWithValue("phone", Categoria.Phone);                   
+                    cmd.Parameters.AddWithValue("@CompanyName", Categoria.CompanyName);
+                    cmd.Parameters.AddWithValue("@phone", Categoria.Phone);                   
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();
                 }
@@ -96,9 +96,9 @@ namespace Web_Api_Pedidos.Datos
                 {
                     conexion.Open();
                     SqlCommand cmd = new SqlCommand("sp_ActShip", conexion);
-                    cmd.Parameters.AddWithValue("ShipperID", Categoria.ShipperId);
-                    cmd.Parameters.AddWithValue("CompanyName", Categoria.CompanyName);
-                    cmd.Parameters.AddWithValue("phone", Categoria.Phone);
+                    cmd.Parameters.AddWithValue("@id", Categoria.ShipperId);
+                    cmd.Parameters.AddWithValue("@CompanyName", Categoria.CompanyName);
+                    cmd.Parameters.AddWithValue("@phone", Categoria.Phone);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();
                 }

@@ -5,10 +5,10 @@ namespace Web_Api_Pedidos.Models
 {
     public partial class Order
     {
-        public Order()
-        {
-            OrderDetails = new HashSet<OrderDetail>();
-        }
+        //public Order()
+        //{
+        //    OrderDetails = new HashSet<OrderDetail>();
+        //}
 
         public int OrderId { get; set; }
         public string? CustomerId { get; set; }
@@ -25,9 +25,9 @@ namespace Web_Api_Pedidos.Models
         public string? ShipPostalCode { get; set; }
         public string? ShipCountry { get; set; }
 
-        public virtual Customer? Customer { get; set; }
-        public virtual Employee? Employee { get; set; }
-        public virtual Shipper? ShipViaNavigation { get; set; }
-        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
+    //    public virtual Customer? Customer { get; set; }
+    //    public virtual Employee? Employee { get; set; }
+    //    public virtual Shipper? ShipViaNavigation { get; set; }
+    //    public virtual ICollection<OrderDetail> OrderDetails { get; set; }
     }
 }
