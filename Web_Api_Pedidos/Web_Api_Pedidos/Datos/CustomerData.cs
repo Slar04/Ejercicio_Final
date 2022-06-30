@@ -142,6 +142,7 @@ namespace Web_Api_Pedidos.Datos
                     cmd.Parameters.AddWithValue("@CompanyName", oCliente.CompanyName);
                     cmd.Parameters.AddWithValue("@ContactName", oCliente.ContactName);
                     cmd.Parameters.AddWithValue("@ContactTitle", oCliente.ContactTitle);
+                    cmd.Parameters.AddWithValue("@Address", oCliente.Address);
                     cmd.Parameters.AddWithValue("@City", oCliente.City);
                     cmd.Parameters.AddWithValue("@Region", oCliente.Region);
                     cmd.Parameters.AddWithValue("@PostalCode", oCliente.PostalCode);
