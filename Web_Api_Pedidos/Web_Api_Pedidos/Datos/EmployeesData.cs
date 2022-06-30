@@ -110,11 +110,9 @@ namespace Web_Api_Pedidos.Datos
                     cmd.Parameters.AddWithValue("@City", Categoria.City);
                     cmd.Parameters.AddWithValue("@Region", Categoria.Region);
                     cmd.Parameters.AddWithValue("@PostalCode", Categoria.PostalCode);
-                    cmd.Parameters.AddWithValue("@Country", Categoria.Country);
-                    cmd.Parameters.AddWithValue("@PostalCode", Categoria.PostalCode);
+                    cmd.Parameters.AddWithValue("@Country", Categoria.Country);                    
                     cmd.Parameters.AddWithValue("@HomePhone", Categoria.HomePhone);
-                    cmd.Parameters.AddWithValue("@Extension", Categoria.Extension);
-                    cmd.Parameters.AddWithValue("@Photo", Categoria.Photo);
+                    cmd.Parameters.AddWithValue("@Extension", Categoria.Extension);                    
                     cmd.Parameters.AddWithValue("@Notes", Categoria.Notes);                   
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();
@@ -140,7 +138,6 @@ namespace Web_Api_Pedidos.Datos
                     conexion.Open();
                     SqlCommand cmd = new SqlCommand("sp_ActEmployes", conexion);
                     cmd.Parameters.AddWithValue("@id", Categoria.EmployeeId);
-                    cmd.Parameters.AddWithValue("@EmployeeId", Categoria.EmployeeId);
                     cmd.Parameters.AddWithValue("@LastName", Categoria.LastName);
                     cmd.Parameters.AddWithValue("@FirstName", Categoria.FirstName);
                     cmd.Parameters.AddWithValue("@Title", Categoria.Title);
@@ -152,11 +149,9 @@ namespace Web_Api_Pedidos.Datos
                     cmd.Parameters.AddWithValue("@Region", Categoria.Region);
                     cmd.Parameters.AddWithValue("@PostalCode", Categoria.PostalCode);
                     cmd.Parameters.AddWithValue("@Country", Categoria.Country);
-                    cmd.Parameters.AddWithValue("@PostalCode", Categoria.PostalCode);
                     cmd.Parameters.AddWithValue("@HomePhone", Categoria.HomePhone);
                     cmd.Parameters.AddWithValue("@Extension", Categoria.Extension);
-                    cmd.Parameters.AddWithValue("@Photo", Categoria.Photo);
-                    cmd.Parameters.AddWithValue("@Notes", Categoria.Notes);                  
+                    cmd.Parameters.AddWithValue("@Notes", Categoria.Notes);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();
                 }
