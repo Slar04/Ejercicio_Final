@@ -5,12 +5,12 @@ namespace Web_Api_Pedidos.Models
 {
     public partial class Employee
     {
-        //public Employee()
-        //{
-        //    InverseReportsToNavigation = new HashSet<Employee>();
-        //    Orders = new HashSet<Order>();
-        //    Territories = new HashSet<Territory>();
-        //}
+        public Employee()
+        {
+            //InverseReportsToNavigation = new HashSet<Employee>();
+            //Orders = new HashSet<Order>();
+            //Territories = new HashSet<Territory>();
+        }
 
         public int EmployeeId { get; set; }
         public string LastName { get; set; } = null!;
@@ -31,7 +31,7 @@ namespace Web_Api_Pedidos.Models
         public int? ReportsTo { get; set; }
         public string? PhotoPath { get; set; }
 
-        //public virtual Employee? ReportsToNavigation { get; set; }
+       // public virtual Employee? ReportsToNavigation { get; set; }
         //public virtual ICollection<Employee> InverseReportsToNavigation { get; set; }
         //public virtual ICollection<Order> Orders { get; set; }
 

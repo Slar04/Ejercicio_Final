@@ -22,26 +22,41 @@ namespace Web_Api_Pedidos.Datos
                     {
                         oLista.Add(new Employee()
                         {
-                            EmployeeId = Convert.ToInt16( dr["EmployeedID"]),
-                            LastName=dr["LastName"].ToString(),
-                            FirstName = dr["FirstName"].ToString(),
-                            Title = dr["Title"].ToString(),
-                            TitleOfCourtesy = dr["TitleOfCourtesy"].ToString(),
-                            BirthDate = Convert.ToDateTime( dr["BirthDate"].ToString()),
-                            HireDate = Convert.ToDateTime( dr["HireDate"].ToString()),
-                            Address = dr["Address"].ToString(),
-                            City = dr["City"].ToString(),
-                            Region = dr["Region"].ToString(),
-                            PostalCode = dr["PostalCode"].ToString(),
-                            Country = dr["Country"].ToString(),
-                            HomePhone = dr["HomePhone"].ToString(),
-                            Extension = dr["Extension"].ToString(),
-                            Photo = Convert.ToByte( dr["Photo"].ToString()),
-                            Notes = dr["Notes"].ToString(),
-                            ReportsTo= Convert.ToInt16( dr["ReportsTo"]),
-                            PhotoPath =dr["PhotoPath"].ToString(),
+                            //EmployeeId = Convert.ToInt16( dr["EmployeeID"]),
+                            //LastName=dr["LastName"].ToString(),
+                            //FirstName = dr["FirstName"].ToString(),
+                            //Title = dr["Title"].ToString(),
+                            //TitleOfCourtesy = dr["TitleOfCourtesy"].ToString(),
+                            //BirthDate = Convert.ToDateTime( dr["BirthDate"].ToString()),
+                            //HireDate = Convert.ToDateTime( dr["HireDate"].ToString()),
+                            //Address = dr["Address"].ToString(),
+                            //City = dr["City"].ToString(),
+                            //Region = dr["Region"].ToString(),
+                            //PostalCode = dr["PostalCode"].ToString(),
+                            //Country = dr["Country"].ToString(),
+                            //HomePhone = dr["HomePhone"].ToString(),
+                            //Extension = dr["Extension"].ToString(),                           
+                            //Notes = dr["Notes"].ToString(),
+                            //ReportsTo= Convert.ToInt16( dr["ReportsTo"]),
+                            EmployeeId = Convert.ToInt16(dr["EmployeeID"]),
+                        LastName = dr["LastName"].ToString(),
+                        FirstName = dr["FirstName"].ToString(),
+                        Title = dr["Title"].ToString(),
+                        TitleOfCourtesy = dr["TitleOfCourtesy"].ToString(),
+                         BirthDate = Convert.ToDateTime(dr["BirthDate"].ToString()),
+                        HireDate = Convert.ToDateTime(dr["HireDate"].ToString()),
+                        Address = dr["Address"].ToString(),
+                        City = dr["City"].ToString(),
+                        Region = dr["Region"].ToString(),
+                        PostalCode = dr["PostalCode"].ToString(),
+                        Country = dr["Country"].ToString(),
+                        HomePhone = dr["HomePhone"].ToString(),
+                        Extension = dr["Extension"].ToString(),
+                        Notes = dr["Notes"].ToString(),
+                        ReportsTo = Convert.ToInt16(dr["ReportsTo"]),
 
-                        });
+
+                    });
                     }
                 }
             }
@@ -64,7 +79,7 @@ namespace Web_Api_Pedidos.Datos
                 {
                     while (dr.Read())
                     {
-                        oCategory.EmployeeId = Convert.ToInt16(dr["EmployeedID"]);
+                        oCategory.EmployeeId = Convert.ToInt16(dr["EmployeeID"]);
                         oCategory.LastName = dr["LastName"].ToString();
                         oCategory.FirstName = dr["FirstName"].ToString();
                         oCategory.Title = dr["Title"].ToString();
@@ -78,10 +93,10 @@ namespace Web_Api_Pedidos.Datos
                         oCategory.Country = dr["Country"].ToString();
                         oCategory.HomePhone = dr["HomePhone"].ToString();
                         oCategory.Extension = dr["Extension"].ToString();
-                        oCategory.Photo = Convert.ToByte(dr["Photo"].ToString());
+                     
                         oCategory.Notes = dr["Notes"].ToString();
                         oCategory.ReportsTo = Convert.ToInt16(dr["ReportsTo"]);
-                        oCategory.PhotoPath = dr["PhotoPath"].ToString();
+                        
                  }
                 }
             }
