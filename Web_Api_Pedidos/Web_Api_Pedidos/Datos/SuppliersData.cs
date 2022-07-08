@@ -91,7 +91,7 @@ namespace Web_Api_Pedidos.Datos
                     SqlCommand cmd = new SqlCommand("sp_Supplier", conexion);
                     cmd.Parameters.AddWithValue("@CompanyName", Categoria.CompanyName);
                     cmd.Parameters.AddWithValue("@ContactName", Categoria.ContactName);
-                    cmd.Parameters.AddWithValue("@@ContactTitle", Categoria.ContactTitle);
+                    cmd.Parameters.AddWithValue("@ContactTitle", Categoria.ContactTitle);
                     cmd.Parameters.AddWithValue("@Address", Categoria.Address);
                     cmd.Parameters.AddWithValue("@City", Categoria.City);
                     cmd.Parameters.AddWithValue("@region", Categoria.Region);
@@ -126,7 +126,7 @@ namespace Web_Api_Pedidos.Datos
                     cmd.Parameters.AddWithValue("@id", Categoria.SupplierId);
                     cmd.Parameters.AddWithValue("@CompanyName", Categoria.CompanyName);
                     cmd.Parameters.AddWithValue("@ContactName", Categoria.ContactName);
-                    cmd.Parameters.AddWithValue("@@ContactTitle", Categoria.ContactTitle);
+                    cmd.Parameters.AddWithValue("@ContactTitle", Categoria.ContactTitle);
                     cmd.Parameters.AddWithValue("@Address", Categoria.Address);
                     cmd.Parameters.AddWithValue("@City", Categoria.City);
                     cmd.Parameters.AddWithValue("@region", Categoria.Region);

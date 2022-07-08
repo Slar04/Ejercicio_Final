@@ -96,7 +96,7 @@ namespace Web_Api_Pedidos.Datos
                 using (var conexion = new SqlConnection(cd.GetCadenaSQL()))
                 {
                     conexion.Open();
-                    // SqlCommand cmd = new SqlCommand("sp_BusCus '"+name+"' ", conexion);
+                    
                     SqlCommand cmd = new SqlCommand("sp_custoners  ", conexion);
                     cmd.Parameters.AddWithValue("@CustomerID", oCliente.CustomerId);
                     cmd.Parameters.AddWithValue("@CompanyName", oCliente.CompanyName);

@@ -5,10 +5,10 @@ namespace Web_Api_Pedidos.Models
 {
     public partial class Product
     {
-        public Product()
-        {
-            OrderDetails = new HashSet<OrderDetail>();
-        }
+        //public Product()
+        //{
+        //    OrderDetails = new HashSet<OrderDetail>();
+        //}
 
         public int ProductId { get; set; }
         public string ProductName { get; set; } = null!;
@@ -20,10 +20,8 @@ namespace Web_Api_Pedidos.Models
         public short? UnitsOnOrder { get; set; }
         public short? ReorderLevel { get; set; }
         public bool Discontinued { get; set; }
-        public string CompanyName { get; set; }
-        public string CategoryName  { get; set; }
-        public virtual Category? Category { get; set; }
-        public virtual Supplier? Supplier { get; set; }
-        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
+
+        
+        //public virtual ICollection<OrderDetail> OrderDetails { get; set; }
     }
 }
